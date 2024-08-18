@@ -7,8 +7,10 @@
       "jsx": "react-jsx", // Значение по-умолчанию: 'react', значение 'react-jsx' позволяет не импортировать библиотеку react.
       "allowJs": true,
       "moduleResolution": "node",
-      //Для абсолютного импорта
-      //"baseUrl": ".",
+      "baseUrl": ".", //Для абсолютного импорта
+      "paths": {
+        "*": ["./src/*"]
+      },
       "allowSyntheticDefaultImports": true, // Благодаря этим двум строчкам можно избавиться от '* as' в импортах.
       "esModuleInterop": true // Позволяет работать с пакетами, которые используют commonjs как с обычными пакетами с помощью import
     },
