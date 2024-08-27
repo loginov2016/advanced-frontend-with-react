@@ -14,7 +14,11 @@ const AppRouter = () => {
                     <Route
                         key={path}
                         path={path}
-                        element={element}
+                        element={(
+                            <div className='page-wrraper'>
+                                {element}
+                            </div>
+                        )}
                     />
                 ))}
             </Routes>

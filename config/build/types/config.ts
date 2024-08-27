@@ -1,5 +1,4 @@
-
-export type BuildMode = 'development' | 'production'; 
+export type BuildMode = 'development' | 'production';
 export interface BuildPaths {
     entry: string;
     build: string;
@@ -17,25 +16,4 @@ export interface BuildOptions {
     paths: BuildPaths;
     isDev: boolean;
     port: number;
-
-}
-
-export interface ThemeContextProps {
-    theme?: Theme;
-    setTheme?: (theme: Theme) => void;
-}
-
-export enum Theme {
-    LIGHT = 'light',
-    DARK  = 'dark'
-}
-
-export interface ThemeContextProps {
-    theme?: Theme;
-    setTheme?: (theme: Theme) => void;
-}
-
-export interface UseThemeResult {
-    toggleTheme: () => void;
-    theme: Theme;
 }
