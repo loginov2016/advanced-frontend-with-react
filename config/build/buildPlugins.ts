@@ -1,11 +1,13 @@
-import path from 'path';
+//import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
-export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
-
+export function buildPlugins({
+    paths,
+    isDev,
+}: BuildOptions): webpack.WebpackPluginInstance[] {
     return [
         new HtmlWebpackPlugin({
             template: paths.html, //path.resolve(__dirname, 'public', 'index.html')
@@ -14,11 +16,12 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // all options are optional
-            filename: "css/[name].[contenthash:8].css",
-            chunkFilename: "css/[name].[contenthash:8].css",
-          }),
+            filename: 'css/[name].[contenthash:8].css',
+            chunkFilename: 'css/[name].[contenthash:8].css',
+        }),
         new webpack.DefinePlugin({
-            __IS_DEV: JSON.stringify(isDev)
-        })  
-    ]
+            __IS_DEV: JSON.stringify(isDev),
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+    ];
 }

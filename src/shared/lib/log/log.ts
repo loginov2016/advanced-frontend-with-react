@@ -1,4 +1,4 @@
-export default function echo(...data: any[]): void {
+export default function echo(...data: unknown[]): void {
     console.log(...data);
     //return data;
 }
