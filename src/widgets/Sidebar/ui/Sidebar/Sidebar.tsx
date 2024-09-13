@@ -12,7 +12,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
 
     const onToggle = () => {
-        setCollapsed((prevState) => !prevState);
+        setCollapsed(prevState => !prevState);
     };
 
     return (
@@ -20,13 +20,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
             className={classNames(
                 style.Sidebar,
                 { [style.collapsed]: collapsed },
-                [className]
+                [className],
             )}
         >
             <button onClick={onToggle}>onToggle</button>
             <div className={style.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher className={style.lang}/>
+                <LangSwitcher className={style.lang} />
             </div>
         </div>
     );
