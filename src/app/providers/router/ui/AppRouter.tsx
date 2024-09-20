@@ -3,10 +3,11 @@ import { MainPage } from 'pages/MainPage';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { routeConfig, AppRoutes } from 'shared/config/routeConfig/routeConfig';
+import { PageLoader } from 'widgets/PageLoader';
 
 const AppRouter = () => {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<PageLoader/>}>
             <Routes>
                 {/* <Route path={'/about'} element={<AboutPage />} />
                     <Route path={'/'} element={<MainPage />} /> */}

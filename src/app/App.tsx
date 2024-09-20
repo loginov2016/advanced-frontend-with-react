@@ -7,17 +7,25 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import log from 'shared/lib/log/log';
 import 'app/styles/index.scss';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 
 function App() {
     //log('import.meta.url: ', import.meta.url);
     const { theme } = useTheme();
+
+    /* Пробрасывал ошибку для тестирования ErrorBoundary.
+    useEffect(() => {
+        if (Math.random() < 0.5) {
+            throw new Error('Ошибка!');
+        }
+    }, []); */
+
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback=''>
+            <Suspense fallback="">
                 <Navbar />
-                
-                <div className='content-page'>
+
+                <div className="content-page">
                     <Sidebar />
                     <AppRouter />
                 </div>
