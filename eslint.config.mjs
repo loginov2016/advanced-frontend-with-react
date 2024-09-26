@@ -39,6 +39,7 @@ export default [
             globals: {
                 ...globals.browser,
                 ...globals.es2024,
+                __IS_DEV__: true,
             },
 
             parserOptions: {
