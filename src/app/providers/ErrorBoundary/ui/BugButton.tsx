@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button } from 'shared/ui/Button/Button';
+import React from 'react';
 
 // Компонет для тестирования ErrorBoundary.
 const BugButton = () => {

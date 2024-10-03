@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import style from './NotFoundPage.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
+import React from 'react';
 
 interface NotFoundPageProps {
     className?: string;
