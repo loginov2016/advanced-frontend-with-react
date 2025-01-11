@@ -15,3 +15,9 @@ export function classNames(
 }
 
 //classNames('remove-btn', {hovered: false, selectable: true, red: true}, ['pdg']);
+/* 
+ Object.entries({hovered: false, selectable: true, red: true}) 
+ === [ [hovered, false], [selectable, true], [red, true] ]
+ .filter( ([_, value]) => value ) === [ [selectable, true], [red, true] ]
+ .map( ([className]) => className ) === [selectable, red]
+*/

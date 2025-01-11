@@ -6,8 +6,11 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
 
+//console.log(jest.fn(x => 3 * x));
+
 describe('Sidebar', () => {
     test('Test Sidebar', () => {
+        
         renderWithTranslation(<Sidebar />);
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });
