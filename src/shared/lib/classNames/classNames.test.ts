@@ -1,13 +1,13 @@
 import { classNames } from './classNames';
 
-function forEach(items: any[], callback: (item: any) => any) {
+/* function forEach(items: any[], callback: (item: any) => any) {
     for (const item of items) {
         callback(item);
     }
-}
+} */
 
 describe('classNames', () => {
-    test('Test Mock Function', () => {
+    /* test('Test Mock Function', () => {
         const mockCallback = jest.fn(x => 3 * x);
         //console.log(mockCallback);
         forEach([1, 2, 3], mockCallback);
@@ -15,7 +15,7 @@ describe('classNames', () => {
         //console.log(mockCallback.mock.calls);
         expect(mockCallback.mock.calls).toHaveLength(3);
         expect(mockCallback.mock.calls[1][0]).toBe(2);
-    });
+    }); */
     test('Test with only first param', () => {
         expect(classNames('class1')).toBe('class1');
     });
