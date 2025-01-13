@@ -1,4 +1,4 @@
-import jest from
+/* import jest from
 
 function forEach(items, callback) {
     for (const item of items) {
@@ -9,3 +9,4 @@ function forEach(items, callback) {
 const mockCallback = jest.fn(x => 3 * x);
 
 console.log(mockCallback);
+ */
