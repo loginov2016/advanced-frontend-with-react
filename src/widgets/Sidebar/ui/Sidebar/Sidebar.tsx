@@ -37,7 +37,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 className={style.collapsedBtn}
                 theme={ButtonTheme.BACKGROUND_INVERTED}
                 onClick={onToggle}
-                size={ButtonSize.L}
+                size={ButtonSize.XL}
                 square
             >
                 {collapsed ? '>' : '<'}

@@ -10,8 +10,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
     };
-    
-    config.module.rules = config.module?.rules?.map( (rule: RuleSetRule) => {
+
+    config.module.rules = config.module?.rules?.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test as string)) {
             return {
                 ...rule,
