@@ -1,27 +1,36 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import style from './Navbar.module.scss';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import React from 'react';
+import { useCallback, useState } from 'react';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Modal } from 'shared/ui/Modal/Modal';
+import { useTranslation } from 'react-i18next';
 
 interface NavbarProps {
     className?: string;
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
+    const { t } = useTranslation();
+    const [isAuthModal, setIsAuthModal] = useState(false);
+
+    const onToggleModal = useCallback(() => {
+        setIsAuthModal(prev => !prev);
+    }, [isAuthModal]);
+
     return (
         <div className={classNames(style.navbar, {}, [className])}>
-            <div className={style.links}>
-                <AppLink
-                    to={'/'}
-                    className={style.mainLink}
-                    theme={AppLinkTheme.SECONDARY}
-                >
-                    Главная
-                </AppLink>
-                <AppLink to={'/about'} theme={AppLinkTheme.SECONDARY}>
-                    О сайте
-                </AppLink>
-            </div>
+            <Button
+                className={style.links}
+                theme={ButtonTheme.CLEAR_INVERTED}
+                onClick={onToggleModal}
+            >
+                {t('Войти')}
+            </Button>
+            <Modal isOpen={isAuthModal} onClose={onToggleModal}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusamus vero et cumque necessitatibus? Perspiciatis
+                reprehenderit tempore delectus mollitia, error ipsa?
+            </Modal>
         </div>
     );
 };

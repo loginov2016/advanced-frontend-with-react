@@ -3,6 +3,7 @@ import js from '@eslint/js';
 import tseslint, { parser } from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 import eslintReactRefresh from 'eslint-plugin-react-refresh';
+import reactHooks from 'eslint-plugin-react-hooks';
 //import prettierPlugin from 'eslint-plugin-prettier';
 //import eslintConfigPrettier from 'eslint-config-prettier';
 
@@ -24,6 +25,7 @@ export default [
                     varsIgnorePattern: '^_',
                     ignoreRestSiblings: true,
                 },
+                ...reactHooks.configs.recommended.rules,
             ],
             '@typescript-eslint/no-explicit-any': 'warn',
             'react-in-jsx-scope': 'off',
@@ -31,6 +33,7 @@ export default [
         plugins: {
             '@typescript-eslint': tseslint.plugin,
             react: pluginReact,
+            'react-hooks': reactHooks,
             'react-refresh': eslintReactRefresh,
         },
     },
