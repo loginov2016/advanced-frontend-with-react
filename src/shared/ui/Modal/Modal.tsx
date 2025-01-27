@@ -62,9 +62,9 @@ export const Modal = (props: ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
-    console.log('theme: ', theme);
+    /* console.log('theme: ', theme);
     console.log('style: ', style);
-    console.log('style[theme]: ', style[theme]);
+    console.log('style[theme]: ', style[theme]); */
 
     const mods: Record<string, boolean> = {
         [style.opened]: isOpen,
@@ -72,11 +72,14 @@ export const Modal = (props: ModalProps) => {
         [style[theme]]: true,
     };
 
-    console.log('isOpen: ', isOpen);
+    /* console.log('isOpen: ', isOpen); */
 
     return (
         <Portal>
-            <div className={classNames(style.Modal, mods, [className])}>
+            <div
+                id="modal"
+                className={classNames(style.Modal, mods, [className])}
+            >
                 <div className={style.overlay} onClick={closeHandler}>
                     <div className={style.content} onClick={onContentClick}>
                         {children}

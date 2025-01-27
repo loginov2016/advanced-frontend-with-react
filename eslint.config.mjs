@@ -25,7 +25,6 @@ export default [
                     varsIgnorePattern: '^_',
                     ignoreRestSiblings: true,
                 },
-                ...reactHooks.configs.recommended.rules,
             ],
             '@typescript-eslint/no-explicit-any': 'warn',
             'react-in-jsx-scope': 'off',
@@ -33,7 +32,6 @@ export default [
         plugins: {
             '@typescript-eslint': tseslint.plugin,
             react: pluginReact,
-            'react-hooks': reactHooks,
             'react-refresh': eslintReactRefresh,
         },
     },

@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-
 import Loader from './Loader';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
